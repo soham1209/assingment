@@ -1,0 +1,184 @@
+Q1
+
+public class MaximalRectangle {
+    public static int maximalRectangle(char[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return 0;
+        }
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int[] heights = new int[cols];
+        int maxArea = 0;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                heights[j] = matrix[i][j] == '1' ? heights[j] + 1 : 0;
+            }
+            maxArea = Math.max(maxArea, largestRectangleArea(heights));
+        }
+
+        return maxArea;
+    }
+
+    private static int largestRectangleArea(int[] heights) {
+        int maxArea = 0;
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for (int i = 0; i <= heights.length; i++) {
+            int h = (i == heights.length) ? 0 : heights[i];
+
+            while (!stack.isEmpty() && h < heights[stack.peek()]) {
+                int height = heights[stack.pop()];
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+                maxArea = Math.max(maxArea, height * width);
+            }
+
+            stack.push(i);
+        }
+
+        return maxArea;
+    }
+}
+
+Q2
+
+public class DecodeString {
+    public static String decodeString(String s) {
+        Deque<Integer> numStack = new ArrayDeque<>();
+        Deque<StringBuilder> strStack = new ArrayDeque<>();
+        StringBuilder currentString = new StringBuilder();
+        int num = 0;
+
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                num = num * 10 + (c - '0');
+            } else if (c == '[') {
+                numStack.push(num);
+                strStack.push(currentString);
+                num = 0;
+                currentString = new StringBuilder();
+            } else if (c == ']') {
+                StringBuilder temp = new StringBuilder();
+                int repeatTimes = numStack.pop();
+                for (int i = 0; i < repeatTimes; i++) {
+                    temp.append(currentString);
+                }
+                currentString = strStack.pop().append(temp);
+            } else {
+                currentString.append(c);
+            }
+        }
+
+        return currentString.toString();
+    }
+
+    public static void main(String[] args) {
+        String encodedString = "3[a]2[bc]";
+        System.out.println("Decoded string: " + decodeString(encodedString));
+    }
+}
+
+Q3
+import java.util.Stack;
+
+public class BaseballGame {
+    public static int calPoints(String[] operations) {
+        Stack<Integer> stack = new Stack<>();
+
+        for (String op : operations) {
+            if (op.equals("+")) {
+                int top = stack.pop();
+                int newTop = top + stack.peek();
+                stack.push(top);
+                stack.push(newTop);
+            } else if (op.equals("D")) {
+                stack.push(2 * stack.peek());
+            } else if (op.equals("C")) {
+                stack.pop();
+            } else {
+                stack.push(Integer.parseInt(op));
+            }
+        }
+
+        int sum = 0;
+        for (int score : stack) {
+            sum += score;
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        String[] operations = {"5", "2", "C", "D", "+"};
+        System.out.println("Sum of scores: " + calPoints(operations));
+    }
+}
+
+Q4
+import java.util.Stack;
+
+public class AsteroidCollision {
+    public static int[] asteroidCollision(int[] asteroids) {
+        Stack<Integer> stack = new Stack<>();
+
+        for (int asteroid : asteroids) {
+            if (stack.isEmpty() || asteroid > 0) {
+                stack.push(asteroid);
+            } else {
+                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < Math.abs(asteroid)) {
+                    stack.pop();
+                }
+                if (!stack.isEmpty() && stack.peek() == Math.abs(asteroid)) {
+                    stack.pop();
+                } else if (stack.isEmpty() || stack.peek() < 0) {
+                    stack.push(asteroid);
+                }
+            }
+        }
+
+        int[] result = new int[stack.size()];
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = stack.pop();
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] asteroids = {5, 10, -5};
+        int[] result = asteroidCollision(asteroids);
+        System.out.print("State of asteroids after collisions: ");
+        for (int asteroid : result) {
+            System.out.print(asteroid + " ");
+        }
+    }
+}
+Q5
+import java.util.Stack;
+
+public class DailyTemperatures {
+    public static int[] dailyTemperatures(int[] temperatures) {
+        int[] result = new int[temperatures.length];
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < temperatures.length; i++) {
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int prevIndex = stack.pop();
+                result[prevIndex] = i - prevIndex;
+            }
+            stack.push(i);
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
+        int[] result = dailyTemperatures(temperatures);
+        System.out.print("Number of days to wait for warmer temperature: ");
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}

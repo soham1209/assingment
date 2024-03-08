@@ -1,0 +1,128 @@
+Q1
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class practice {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm = new HashMap<>();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Entr the number how mutch you want to give of people");
+        int n = Integer.parseInt(sc.nextLine());
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter key");
+            int key = Integer.parseInt(sc.nextLine());
+            System.out.println("Enter value");
+            String value = sc.nextLine();
+            
+            hm.put(key, value);
+            
+        }
+        TreeMap<Integer,String> tm = new TreeMap<>(hm);
+        System.out.println(tm); 
+    }
+}
+
+Q2
+import java.util.*;
+
+public class SortedMapExample {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new TreeMap<>(new Comparator<String>() {
+            @Override
+            public int compare(String key1, String key2) {
+                int valueCompare = map.get(key1).compareTo(map.get(key2));
+                return (valueCompare == 0) ? key1.compareTo(key2) : valueCompare;
+            }
+        });
+
+        
+        map.put("Rahul", 5);
+        map.put("Lakshman", 7);
+        map.put("Ram", 1);
+        map.put("Krrish", 4);
+        map.put("Lakshay", 2);
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + "=" + entry.getValue());
+        }
+    }
+}
+
+Q3
+public static boolean funciton(int[] arr){
+        HashSet<Integer> hs = new HashSet<>();
+        for (int n : arr) {
+            hs.add(n);
+        }
+        if (arr.length == hs.size()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+Q4
+public static int findMajorityElement(int[] nums) {
+        int majorityElement = nums[0];
+        int count = 1;
+
+        // Iterate through the array
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == majorityElement) {
+                // If the current element is equal to the majority element, increase count
+                count++;
+            } else {
+                // If the current element is not equal to the majority element, decrease count
+                count--;
+                if (count == 0) {
+                    // If count becomes zero, update the majority element to the current element
+                    majorityElement = nums[i];
+                    count = 1;
+                }
+            }
+        }
+
+        // At this point, majorityElement should be the majority element, but we need to verify
+        // if it occurs more than n/2 times
+        count = 0;
+        for (int num : nums) {
+            if (num == majorityElement) {
+                count++;
+            }
+        }
+
+        if (count > nums.length / 2) {
+            return majorityElement;
+        } else {
+            throw new IllegalArgumentException("No majority element found");
+        }
+    }
+
+
+Q5
+public class Solution {
+  public boolean canConstruct(String ransomNote, String magazine) {
+    if (ransomNote == null || ransomNote.isEmpty()) {
+      return true; // Empty ransom note can be formed from anything
+    }
+    if (magazine == null || magazine.length() < ransomNote.length()) {
+      return false; // Magazine too short or null
+    }
+    
+    int[] charCount = new int[26];
+    for (char c : magazine.toCharArray()) {
+      charCount[c - 'a']++;
+    }
+    
+    for (char c : ransomNote.toCharArray()) {
+      if (charCount[c - 'a'] == 0) {
+        return false; // Missing character in magazine
+      }
+      charCount[c - 'a']--;
+    }
+    
+    return true;
+  }
+}
