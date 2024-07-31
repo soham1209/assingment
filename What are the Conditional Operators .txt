@@ -1,0 +1,76 @@
+What are the Conditional Operators in Java?
+
+Conditional operators in Java include:
+&& (Logical AND)
+|| (Logical OR)
+?: (Ternary Operator)
+! (Logical NOT)
+
+
+What are the types of operators based on the number of operands?
+
+Unary Operators: Operate on one operand (e.g., ++, --, !).
+Binary Operators: Operate on two operands (e.g., +, -, *, /, &&, ||).
+Ternary Operators: Operate on three operands (e.g., ?:).
+
+
+What is the use of Switch case in Java programming?
+
+The switch case is used to execute one block of code from multiple conditions. It is an alternative to using multiple if-else statements, providing a more readable and efficient way to handle multiple conditions.
+
+
+What are the priority levels of arithmetic operation in Java?
+
+Priority levels (from highest to lowest):
+()
+*, /, %
++, -
+
+
+What are the conditional statements and use of conditional statements in Java?
+
+Conditional statements include if, if-else, else-if, switch.
+They are used to perform different actions based on different conditions. This allows the flow of the program to change based on the result of evaluated expressions.
+
+
+What is the syntax of if-else statement?
+
+
+if (condition) {
+    // code to be executed if condition is true
+} else {
+    // code to be executed if condition is false
+}
+
+
+What are the 3 types of iterative statements in Java?
+
+for loop
+while loop
+do-while loop
+
+
+Write the difference between for loop and do-while loop.
+
+for loop:
+
+for (initialization; condition; update) {
+    // code to be executed
+}
+Executes the loop body zero or more times.
+do-while loop:
+
+do {
+    // code to be executed
+} while (condition);
+Executes the loop body at least once before checking the condition.
+Write a program to print numbers from 1 to 10.
+
+
+public class PrintNumbers {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
