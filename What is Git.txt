@@ -1,0 +1,51 @@
+What is Git?
+
+Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It allows multiple developers to work on a project simultaneously without interfering with each other's changes.
+
+
+What do you understand by the term ‘Version Control System’?
+
+A Version Control System (VCS) is a tool that helps manage changes to source code over time. It keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
+
+
+What is GitHub?
+
+GitHub is a web-based platform used for version control and collaborative development. It hosts Git repositories and provides a web-based graphical interface and various collaboration features such as bug tracking, feature requests, task management, and wikis for every project.
+
+
+Mention some popular Git hosting services:
+
+GitHub
+GitLab
+Bitbucket
+SourceForge
+AWS CodeCommit
+
+
+Different types of version control system:
+
+Local Version Control Systems: Keep track of files within the local system.
+Centralized Version Control Systems (CVCS): Use a single server to store all the versions of the project files.
+Distributed Version Control Systems (DVCS): Each contributor has a local copy of the entire project history.
+
+
+What benefits come with using GIT?
+
+Distributed development
+Data integrity
+Speed and performance
+Branching and merging support
+Flexibility
+Strong community support
+
+
+What is a Git repository?
+
+A Git repository is a storage space where your project’s files and their complete history are stored. It can be stored locally on a computer or on a remote server.
+
+
+How can you initialize a repository in Git?
+
+To initialize a Git repository, navigate to your project’s directory in the terminal and run the following command:
+git init
+This command creates a new subdirectory named .git that contains all the necessary metadata for the repository.
