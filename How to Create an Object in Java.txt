@@ -1,0 +1,53 @@
+How to Create an Object in Java
+
+To create an object in Java, you use the new keyword followed by the class name and parentheses. For example:
+ClassName objectName = new ClassName();
+Example:
+Dog myDog = new Dog();
+
+
+What is the use of the new keyword in Java
+
+The new keyword is used to create new objects in Java. It allocates memory for the object on the heap and initializes the object by calling its constructor.
+
+
+What are the different types of variables in Java
+
+Instance Variables: Variables defined inside a class but outside any method. They are unique to each instance of a class.
+Class Variables (Static Variables): Variables declared with the static keyword inside a class but outside any method. They are shared among all instances of a class.
+Local Variables: Variables declared inside a method, constructor, or block. They are only accessible within that method, constructor, or block.
+Parameters: Variables that are passed to methods or constructors.
+
+
+What is the difference between Instance variables and Local variables
+
+Instance Variables:
+Declared inside a class but outside any method.
+Each instance of the class has its own copy.
+They have a default value if not initialized.
+Local Variables:
+Declared inside a method, constructor, or block.
+Only accessible within the method, constructor, or block they are declared in.
+Do not have a default value and must be initialized before use.
+
+
+In which area memory is allocated for instance variables and local variables
+
+Instance Variables: Memory is allocated in the heap.
+Local Variables: Memory is allocated in the stack.
+
+
+What is method overloading?
+
+Method overloading is a feature in Java that allows a class to have more than one method with the same name, as long as their parameter lists are different. It is a type of polymorphism.
+Example:
+
+public class MathUtils {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
