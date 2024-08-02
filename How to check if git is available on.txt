@@ -1,0 +1,51 @@
+How to check if git is available on your system
+
+Open your terminal or command prompt.
+Type git --version and press Enter.
+If git is installed, it will show the version number.
+
+
+How to initialize a new Git repository
+
+Navigate to your project directory using the terminal.
+Type git init and press Enter.
+This command initializes a new Git repository in your project directory.
+
+
+How to tell git about your name and email
+
+Type git config --global user.name "Your Name" and press Enter.
+Type git config --global user.email "your.email@example.com" and press Enter.
+These commands set your name and email for Git commits.
+
+
+How to add a file to the staging area
+
+Type git add filename and press Enter.
+Replace filename with the name of the file you want to stage.
+To stage all files, you can use git add ..
+
+
+How to remove a file from the staging area
+
+Type git reset filename and press Enter.
+Replace filename with the name of the file you want to unstage.
+
+
+How to make a commit
+
+Type git commit -m "Your commit message" and press Enter.
+Replace "Your commit message" with a description of the changes you made.
+
+
+How to send your changes to a remote repository
+
+First, ensure you have added a remote repository using git remote add origin remote_url.
+Type git push origin branch_name and press Enter.
+Replace remote_url with the URL of your remote repository and branch_name with the name of your branch.
+
+
+What is the difference between clone and pull?
+
+Clone: git clone remote_url is used to create a copy of an existing repository from a remote server to your local machine.
+Pull: git pull is used to fetch and merge changes from the remote repository to your local repository.
