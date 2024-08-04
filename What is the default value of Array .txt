@@ -1,0 +1,84 @@
+What is the default value of Array for different data types
+
+byte, short, int, long: 0
+float, double: 0.0
+char: '\u0000' (null character)
+boolean: false
+Object references (e.g., Strings, Arrays): null
+
+
+Can you pass the negative number in Array size
+
+No, you cannot pass a negative number as the size of an array. Doing so will result in a NegativeArraySizeException.
+
+
+Where does Array stored in JVM memory
+
+Arrays are stored in the heap memory in JVM.
+
+
+What are the disadvantages of Array
+
+Fixed size: Once created, the size of the array cannot be changed.
+Homogeneous data structure: Arrays can only store elements of the same data type.
+Lack of built-in methods: Unlike other data structures like lists, arrays lack built-in methods for common operations like insertion and deletion.
+
+
+What is an Anonymous Array in Java? Give an example
+
+An anonymous array is an array without a name and is used for instant use. It is generally used to pass an array as an argument to a method.
+Example:
+
+public class Test {
+    static void printArray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void main(String args[]) {
+        printArray(new int[]{10, 22, 44, 66});
+    }
+}
+
+
+What are the different ways to traverse an Array in Java
+
+Using for loop:
+
+for (int i = 0; i < array.length; i++) {
+    System.out.print(array[i] + " ");
+}
+
+
+Using enhanced for loop (for-each loop):
+
+for (int element : array) {
+    System.out.print(element + " ");
+}
+
+Using while loop:
+
+int i = 0;
+while (i < array.length) {
+    System.out.print(array[i] + " ");
+    i++;
+}
+
+Using Arrays.stream() (Java 8 and above):
+
+Arrays.stream(array).forEach(element -> System.out.print(element + " "));
+
+
+What is the difference between length and length() method? Give examples
+
+length: It is an attribute of an array that gives the size (number of elements) of the array.
+Example:
+
+int[] arr = new int[5];
+System.out.println(arr.length); // Output: 5
+length(): It is a method of the String class that returns the number of characters in the string.
+Example:
+
+String str = "Hello";
+System.out.println(str.length()); // Output: 5
