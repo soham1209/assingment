@@ -1,0 +1,82 @@
+1
+import java.util.Scanner;
+
+public class InputStringExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        System.out.println("You entered: " + input);
+        scanner.close();
+    }
+}
+
+2. Concatenate Two Strings in Java
+public class ConcatenateStrings {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+        String result = str1 + " " + str2;  // Using + operator
+        // String result = str1.concat(" ").concat(str2);  // Using concat method
+        System.out.println("Concatenated String: " + result);
+    }
+}
+
+3. Find the Length of a String in Java
+public class StringLengthExample {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        int length = str.length();
+        System.out.println("The length of the string is: " + length);
+    }
+}
+4. Compare Two Strings in Java
+
+public class CompareStrings {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "hello";
+        if (str1.equals(str2)) {
+            System.out.println("The strings are equal.");
+        } else {
+            System.out.println("The strings are not equal.");
+        }
+        
+        // For case-insensitive comparison
+        if (str1.equalsIgnoreCase(str2)) {
+            System.out.println("The strings are equal (case-insensitive).");
+        } else {
+            System.out.println("The strings are not equal (case-insensitive).");
+        }
+    }
+}
+5. Program to Find the Length of the String "refrigerator"
+
+public class RefrigeratorLength {
+    public static void main(String[] args) {
+        String str = "refrigerator";
+        int length = str.length();
+        System.out.println("The length of the string 'refrigerator' is: " + length);
+    }
+}
+6. Program to Check if the Letter 'e' is Present in the Word 'Umbrella'
+
+public class CheckLetterE {
+    public static void main(String[] args) {
+        String word = "Umbrella";
+        if (word.contains("e")) {
+            System.out.println("The letter 'e' is present in the word 'Umbrella'.");
+        } else {
+            System.out.println("The letter 'e' is not present in the word 'Umbrella'.");
+        }
+    }
+}
+7. Program to Delete All Consonants from the String "Hello, have a good day"
+
+public class DeleteConsonants {
+    public static void main(String[] args) {
+        String str = "Hello, have a good day";
+        String result = str.replaceAll("[^aeiouAEIOU\\s]", "");
+        System.out.println("String after deleting consonants: " + result);
+    }
+}

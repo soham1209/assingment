@@ -1,0 +1,100 @@
+ Write a Java program to reverse a string without using the inbuilt method.
+
+public class ReverseString {
+    public static void main(String[] args) {
+        String original = "HelloWorld";
+        String reversed = "";
+
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed += original.charAt(i);
+        }
+
+        System.out.println("Original string: " + original);
+        System.out.println("Reversed string: " + reversed);
+    }
+}
+2. Write a Java program to know whether the given string is a palindrome.
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        String original = "madam";
+        String reversed = "";
+
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed += original.charAt(i);
+        }
+
+        if (original.equals(reversed)) {
+            System.out.println(original + " is a palindrome.");
+        } else {
+            System.out.println(original + " is not a palindrome.");
+        }
+    }
+}
+3. Write a Java program to convert upper case to lower case and vice versa.
+
+public class CaseConversion {
+    public static void main(String[] args) {
+        String original = "HelloWorld";
+        String converted = "";
+
+        for (int i = 0; i < original.length(); i++) {
+            char c = original.charAt(i);
+            if (Character.isUpperCase(c)) {
+                converted += Character.toLowerCase(c);
+            } else {
+                converted += Character.toUpperCase(c);
+            }
+        }
+
+        System.out.println("Original string: " + original);
+        System.out.println("Converted string: " + converted);
+    }
+}
+4. Write a Java program to remove a particular character from a string.
+
+public class RemoveCharacter {
+    public static void main(String[] args) {
+        String original = "HelloWorld";
+        char charToRemove = 'o';
+        String result = "";
+
+        for (int i = 0; i < original.length(); i++) {
+            if (original.charAt(i) != charToRemove) {
+                result += original.charAt(i);
+            }
+        }
+
+        System.out.println("Original string: " + original);
+        System.out.println("String after removing '" + charToRemove + "': " + result);
+    }
+}
+5. Write a Java program to find the index of a substring.
+
+public class FindSubstringIndex {
+    public static void main(String[] args) {
+        String original = "HelloWorld";
+        String substring = "World";
+
+        int index = -1;
+        for (int i = 0; i <= original.length() - substring.length(); i++) {
+            if (original.substring(i, i + substring.length()).equals(substring)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            System.out.println("Substring '" + substring + "' found at index: " + index);
+        } else {
+            System.out.println("Substring '" + substring + "' not found in the string.");
+        }
+    }
+}
+
+
+
+
+
+
+
