@@ -1,0 +1,106 @@
+Write a program to demonstrate method overloading with 3 different parameters.
+
+public class MethodOverloadingExample {
+
+    // Method with two int parameters
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method with three int parameters
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method with two double parameters
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        MethodOverloadingExample example = new MethodOverloadingExample();
+        System.out.println("Sum of two integers: " + example.add(5, 10));
+        System.out.println("Sum of three integers: " + example.add(5, 10, 15));
+        System.out.println("Sum of two doubles: " + example.add(5.5, 10.5));
+    }
+}
+
+2. Write a program to create an object of a class which contains a method and call that class method in the main method.
+
+public class ExampleClass {
+
+    // Method in ExampleClass
+    public void displayMessage() {
+        System.out.println("Hello from ExampleClass!");
+    }
+
+    public static void main(String[] args) {
+        // Create an object of ExampleClass
+        ExampleClass obj = new ExampleClass();
+        // Call the displayMessage method
+        obj.displayMessage();
+    }
+}
+
+3. Write a Java program to calculate the sum of all elements in an integer array.
+
+public class SumArray {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int sum = 0;
+        
+        // Calculate the sum of all elements
+        for (int num : array) {
+            sum += num;
+        }
+        
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+
+4. Write a Java program to find the index of a specific element in an integer array.
+
+public class FindIndex {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int elementToFind = 3;
+        int index = -1;
+        
+        // Find the index of the specific element
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == elementToFind) {
+                index = i;
+                break;
+            }
+        }
+        
+        if (index != -1) {
+            System.out.println("Element " + elementToFind + " found at index: " + index);
+        } else {
+            System.out.println("Element " + elementToFind + " not found in the array.");
+        }
+    }
+}
+
+5. Write a Java program to print an entire array.
+
+public class PrintArray {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        
+        // Print the entire array
+        System.out.print("Array elements: ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
