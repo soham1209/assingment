@@ -1,0 +1,44 @@
+
+
+What is the Collection framework in Java? 
+The Collection framework in Java is a set of classes and interfaces that help in storing and manipulating groups of objects. It includes classes like ArrayList, HashSet, and HashMap, and interfaces like List, Set, and Map.
+
+What is the difference between ArrayList and LinkedList?
+ArrayList is based on a dynamic array, so accessing elements is faster (O(1)), but inserting and deleting elements is slower (O(n)).
+LinkedList is based on a doubly linked list, so insertion and deletion are faster (O(1)), but access time is slower (O(n)).
+
+What is the difference between Iterator and ListIterator?
+Iterator can traverse elements in one direction (forward) and can remove elements.
+ListIterator can traverse in both directions (forward and backward), modify elements, and add new ones.
+
+What is the difference between Iterator and Enumeration?
+Iterator is part of the Collection framework and allows removing elements while traversing.
+Enumeration is an older interface, doesn't support element removal, and is less powerful.
+
+What is the difference between List and Set?
+List allows duplicate elements and maintains insertion order.
+Set does not allow duplicates and does not guarantee any specific order.
+
+What is the difference between HashSet and TreeSet?
+HashSet stores elements using a hash table, provides constant-time operations, and doesn't guarantee order.
+TreeSet stores elements in a sorted tree (Red-Black tree), guaranteeing sorted order but slower performance.
+
+What is the difference between Array and ArrayList?
+Array has a fixed size, while ArrayList is dynamic and can resize itself.
+ArrayList provides more flexible operations like adding, removing, and manipulating elements, while arrays are more performant when size is constant.
+
+What is a Map in Java? 
+A Map is an interface in Java that represents a collection of key-value pairs where each key is unique. Common examples include HashMap, TreeMap, and LinkedHashMap.
+
+What are the commonly used implementations of Map in Java? 
+Common implementations include:
+HashMap: No order, constant-time performance.
+TreeMap: Sorted order based on keys.
+LinkedHashMap: Maintains insertion order.
+
+What is the difference between HashMap and TreeMap?
+HashMap provides O(1) time complexity for basic operations and doesn't guarantee any order.
+TreeMap provides O(log n) time complexity and guarantees that keys will be sorted.
+
+How do you check if a key exists in a Map in Java?
+You can use the containsKey(Object key) method to check if a key exists in a map. Example: map.containsKey(key) returns true if the key exists, otherwise false.
